@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avila's Tire Hub - Demo</title>
+
+    <link rel="stylesheet" href="FrontEnd/styles.css">
+
+</head>
+
+<body>
+
+    <section class="search-section" id="buscar">
+        <div class="container">
+            <h2 class="section-title">Encuentra tu Llanta Perfecta</h2>
+
+            <div class="search-tabs">
+                <button class="tab-btn active" id="tab-vehiculo" onclick="cambiarBusqueda('vehiculo')">Por
+                    Vehículo</button>
+                <button class="tab-btn" id="tab-medida" onclick="cambiarBusqueda('medida')">Por Medida</button>
+            </div>
+
+            <div class="search-form-container">
+
+                <div class="search-by-auto" id="form-vehiculo">
+
+                    <div class="cascada-selector">
+                        <select id="select-marca" class="search-select">
+                            <option value="">Selecciona una Marca</option>
+                        </select>
+
+                        <select id="select-modelo" class="search-select" disabled>
+                            <option value="">Selecciona un Modelo</option>
+                        </select>
+
+                        <select id="select-version" class="search-select" disabled>
+                            <option value="">Selecciona una Versión/Año</option>
+                        </select>
+
+                        <button id="btn-buscar" class="btn-primary" disabled>
+                            Buscar Llantas
+                        </button>
+                    </div>
+                </div>
+
+                <div class="search-by-size hidden" id="form-medida">
+                    <p>Aquí irá el formulario para buscar por Ancho / Perfil / Rin.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="results-section container">
+        <div id="resultados-llantas">
+        </div>
+    </section>
+
+    <script src=FrontEnd\script.js></script>
+</body>
+
+</html>
