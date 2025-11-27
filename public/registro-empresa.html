@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Empresa - Avila's Tyre</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <header>
+    <a class="volver" href="/registro.html">← Volver</a>
+    <h1>🚗 Avila's Tyre</h1>
+  </header>
+
+  <div class="form-container">
+    <form id="registroEmpresaForm" class="card">
+      <h2>🏢 Registro de Empresa</h2>
+
+      <div class="campo">
+        <label>📧 Correo electrónico</label>
+        <input type="email" id="email" placeholder="empresa@ejemplo.com" required>
+      </div>
+
+      <div class="campo">
+        <label>🔒 Contraseña</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+
+      <div class="campo">
+        <label>🆔 NIT / Número de Documento</label>
+        <input type="text" id="numeroDocumento" placeholder="1234567890" required>
+      </div>
+
+      <div class="campo">
+        <label>📞 Teléfono (opcional)</label>
+        <input type="text" id="telefono" placeholder="70123456">
+      </div>
+
+      <div class="campo">
+        <label>🏛️ Razón Social</label>
+        <input type="text" id="razonSocial" placeholder="Empresa S.A." required>
+      </div>
+
+      <div class="campo">
+        <label>🏪 Nombre Comercial (opcional)</label>
+        <input type="text" id="nombreComercial" placeholder="Mi Empresa">
+      </div>
+
+      <button type="submit">Registrar Empresa</button>
+    </form>
+  </div>
+
+  <script src="./js/registro-empresa.js"></script>
+</body>
+
+</html>

@@ -1,23 +1,20 @@
 {
-  "name": "llantas-cascada-app",
+  "name": "simple",
   "version": "1.0.0",
-  "description": "Aplicación de búsqueda en cascada con Express y SQL Server.",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "express",
-    "mssql",
-    "node"
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-    "express": "^4.21.2",
-    "mssql": "^10.0.0",
-    "path": "^0.12.7"
+    "express": "^5.1.0",
+    "mongoose": "^9.0.0",
+    "mssql": "^12.1.1"
   }
 }

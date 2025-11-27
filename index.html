@@ -2,63 +2,99 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avila's Tire Hub - Demo</title>
-
-    <link rel="stylesheet" href="FrontEnd/styles.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avila's Tyre Company - Encuentra las Llantas Perfectas</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <section class="search-section" id="buscar">
-        <div class="container">
-            <h2 class="section-title">Encuentra tu Llanta Perfecta</h2>
+  <header>
+    <h1>Avila's Tyre Company</h1>
+    <div class="header-actions">
+      <button id="btn-carrito" class="btn-carrito">
+        Carrito <span id="cart-count" class="cart-count">0</span>
+      </button>
+      <a href="login.html" class="btn-login">Iniciar Sesión</a>
+    </div>
+  </header>
 
-            <div class="search-tabs">
-                <button class="tab-btn active" id="tab-vehiculo" onclick="cambiarBusqueda('vehiculo')">Por
-                    Vehículo</button>
-                <button class="tab-btn" id="tab-medida" onclick="cambiarBusqueda('medida')">Por Medida</button>
-            </div>
+  <div class="filtros">
+    <div class="campo">
+      <label for="marcas">Marca del Vehículo</label>
+      <select id="marcas">
+        <option value="">Cargando marcas...</option>
+      </select>
+    </div>
 
-            <div class="search-form-container">
+    <div class="campo">
+      <label for="modelos">Modelo</label>
+      <select id="modelos" disabled>
+        <option value="">Seleccione una marca primero</option>
+      </select>
+    </div>
 
-                <div class="search-by-auto" id="form-vehiculo">
+    <div class="campo">
+      <label for="versiones">Versión</label>
+      <select id="versiones" disabled>
+        <option value="">Seleccione un modelo primero</option>
+      </select>
+    </div>
+  </div>
 
-                    <div class="cascada-selector">
-                        <select id="select-marca" class="search-select">
-                            <option value="">Selecciona una Marca</option>
-                        </select>
+  <section class="productos-section">
+    <h2>Productos Disponibles</h2>
+    <ul id="productos">
+      <li>Seleccione un vehículo para ver productos compatibles</li>
+    </ul>
+  </section>
 
-                        <select id="select-modelo" class="search-select" disabled>
-                            <option value="">Selecciona un Modelo</option>
-                        </select>
+  <div class="form-container">
+    <div class="card">
+      <h2>¿No tienes cuenta?</h2>
+      <p class="texto-centrado" style="margin-bottom: 1.5rem;">Regístrate para acceder a todas las funcionalidades</p>
 
-                        <select id="select-version" class="search-select" disabled>
-                            <option value="">Selecciona una Versión/Año</option>
-                        </select>
+      <a href="registro-persona.html" class="btn-primary">
+        Registrar Persona
+      </a>
 
-                        <button id="btn-buscar" class="btn-primary" disabled>
-                            Buscar Llantas
-                        </button>
-                    </div>
-                </div>
+      <a href="registro-empresa.html" class="btn-primary mt-10">
+        Registrar Empresa
+      </a>
+    </div>
+  </div>
 
-                <div class="search-by-size hidden" id="form-medida">
-                    <p>Aquí irá el formulario para buscar por Ancho / Perfil / Rin.</p>
-                </div>
+  <!-- Modal del Carrito -->
+  <div id="cart-modal" class="cart-modal">
+    <div class="cart-modal-content">
+      <div class="cart-modal-header">
+        <h2>Carrito de Compras</h2>
+        <button id="close-cart" class="close-cart">&times;</button>
+      </div>
 
-            </div>
+      <div class="cart-modal-body">
+        <div id="cart-items">
+          <p class="cart-empty">El carrito está vacío</p>
         </div>
-    </section>
+      </div>
 
-    <section class="results-section container">
-        <div id="resultados-llantas">
+      <div class="cart-modal-footer">
+        <div class="cart-total">
+          <strong>Total:</strong>
+          <span id="cart-total">Bs 0.00</span>
         </div>
-    </section>
+        <div class="cart-actions">
+          <button id="btn-vaciar-carrito" class="btn-secondary">Vaciar Carrito</button>
+          <button id="btn-finalizar-compra" class="btn-primary">Finalizar Compra</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script src=FrontEnd\script.js></script>
+  <script src="js/script.js"></script>
+  <script src="js/carrito.js"></script>
+
 </body>
 
 </html>

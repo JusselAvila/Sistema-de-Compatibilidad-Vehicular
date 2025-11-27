@@ -1,0 +1,433 @@
+/* ========================================= */
+/* 1. Variables Globales y Reset Básico */
+/* ========================================= */
+:root {
+  /* Paleta de Colores Primaria */
+  --color-primary: #007bff;
+  /* Azul vibrante (botones principales) */
+  --color-secondary: #6c757d;
+  /* Gris (botones secundarios, texto secundario) */
+  --color-background: #f8f9fa;
+  /* Fondo claro */
+  --color-text-dark: #343a40;
+  /* Texto oscuro principal */
+  --color-text-light: #ffffff;
+  /* Texto claro */
+  --color-success: #28a745;
+  /* Verde (mensajes de éxito) */
+  --color-error: #dc3545;
+  /* Rojo (mensajes de error) */
+
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  /* 8px */
+  --spacing-sm: 1rem;
+  /* 16px */
+  --spacing-md: 1.5rem;
+  /* 24px */
+  --spacing-lg: 2rem;
+  /* 32px */
+  --spacing-xl: 3rem;
+  /* 48px */
+
+  /* Bordes y Sombras */
+  --border-radius: 0.25rem;
+  --box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --box-shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  /* Tipografía */
+  --font-family: 'Arial', sans-serif;
+  --font-size-base: 16px;
+}
+
+/* Reset Mínimo */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* Fundamental para layouts responsivos */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text-dark);
+  background-color: var(--color-background);
+  line-height: 1.6;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Enlaces base */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================= */
+/* 2. Bloques de Layout Principales (BEM) */
+/* ========================================= */
+
+/* Bloque: Header */
+.header {
+  background-color: var(--color-text-dark);
+  color: var(--color-text-light);
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow-sm);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Elemento: Acciones del Header */
+.header-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+
+/* Bloque: Filtros */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que los filtros bajen de línea en móviles */
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--color-text-light);
+  border-bottom: 1px solid #dee2e6;
+  justify-content: center;
+}
+
+/* Elemento: Campo de Filtro */
+.campo {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  flex-grow: 1;
+  /* Permite que los campos se expandan */
+}
+
+.campo label {
+  font-weight: bold;
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.9rem;
+}
+
+.campo select {
+  padding: var(--spacing-xs);
+  border: 1px solid #ced4da;
+  border-radius: var(--border-radius);
+  background-color: var(--color-text-light);
+  font-size: var(--font-size-base);
+  height: 40px;
+}
+
+/* Bloque: Sección de Productos */
+.productos-section {
+  padding: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Elemento: Lista de Productos */
+#productos {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  /* Diseño de rejilla escalable (lo verás en el futuro) */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+#productos li {
+  background-color: var(--color-text-light);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-sm);
+  text-align: center;
+}
+
+/* Bloque: Contenedor de Formularios (o Tarjetas) */
+.form-container {
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+}
+
+/* Elemento: Tarjeta de Contenido */
+.card {
+  background-color: var(--color-text-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-md);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ========================================= */
+/* 3. Componentes Reutilizables (BEM) */
+/* ========================================= */
+
+/* Componente: Botones */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+  /* Para botones dentro de links (<a>) */
+}
+
+/* Modificador: Botón Primario */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  /* Tono más oscuro de azul */
+  text-decoration: none;
+}
+
+/* Modificador: Botón Secundario */
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  text-decoration: none;
+}
+
+/* Componente: Botón de Carrito (Especial) */
+.btn-carrito {
+  /* Hereda estilos base de .btn */
+  padding: 0.5rem 0.75rem;
+  position: relative;
+  background-color: var(--color-success);
+  /* Usamos verde para destacar */
+  color: var(--color-text-light);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+/* Elemento: Contador del Carrito */
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--color-error);
+  /* Rojo para notificación */
+  color: var(--color-text-light);
+  border-radius: 50%;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+/* Elemento: Botón de Login (Es un enlace <a>) */
+.btn-login {
+  /* Hereda estilos de .btn y .btn-secondary */
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+}
+
+.btn-login:hover {
+  background-color: #5a6268;
+  text-decoration: none;
+}
+
+
+/* ========================================= */
+/* 4. Estilos de Utilidad y Módulos */
+/* ========================================= */
+
+/* Utilidad: Margen superior */
+.mt-10 {
+  margin-top: 10px;
+  /* Clase de utilidad simple */
+}
+
+/* Utilidad: Texto centrado */
+.texto-centrado {
+  text-align: center;
+}
+
+/* ========================================= */
+/* 5. Estilos del Modal del Carrito */
+/* ========================================= */
+
+/* Bloque: Modal */
+.cart-modal {
+  display: none;
+  /* Se oculta por defecto, JavaScript lo mostrará */
+  position: fixed;
+  z-index: 1000;
+  /* Asegura que esté por encima de todo */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Fondo semi-transparente */
+  padding-top: 60px;
+}
+
+/* Elemento: Contenido del Modal */
+.cart-modal-content {
+  background-color: var(--color-text-light);
+  margin: 5% auto;
+  /* Centrado en pantalla */
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 500px;
+  box-shadow: var(--box-shadow-md);
+}
+
+/* Elemento: Encabezado del Modal */
+.cart-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cart-modal-header h2 {
+  margin: 0;
+}
+
+/* Elemento: Botón de Cerrar */
+.close-cart {
+  color: var(--color-text-dark);
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.close-cart:hover,
+.close-cart:focus {
+  color: var(--color-error);
+  text-decoration: none;
+}
+
+/* Elemento: Cuerpo del Modal */
+.cart-modal-body {
+  min-height: 100px;
+}
+
+/* Elemento: Mensaje de carrito vacío */
+.cart-empty {
+  text-align: center;
+  color: var(--color-secondary);
+  font-style: italic;
+  padding: var(--spacing-md);
+}
+
+/* Elemento: Pie de página del Modal */
+.cart-modal-footer {
+  border-top: 1px solid #dee2e6;
+  padding-top: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+}
+
+/* ========================================= */
+/* 6. Adaptación Móvil (Responsive Design) */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Ajustes para tabletas y móviles */
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .header {
+    flex-direction: column;
+    /* Apila el título y las acciones */
+    gap: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .header h1 {
+    margin-bottom: 0;
+  }
+
+  .filtros {
+    flex-direction: column;
+    /* Apila los campos de filtro */
+    gap: var(--spacing-sm);
+  }
+
+  .campo {
+    min-width: 100%;
+    /* El campo ocupa todo el ancho */
+  }
+
+  .cart-actions {
+    flex-direction: column;
+    /* Apila los botones de acción del carrito */
+  }
+
+  .cart-actions .btn {
+    width: 100%;
+  }
+}

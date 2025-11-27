@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Persona - Avila's Tyre</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <header>
+    <a class="volver" href="/registro.html">← Volver</a>
+    <h1>🚗 Avila's Tyre</h1>
+  </header>
+
+  <div class="form-container">
+    <form id="registroPersonaForm" class="card">
+      <h2>👤 Registro de Persona</h2>
+
+      <div class="campo">
+        <label>📧 Correo electrónico</label>
+        <input type="email" id="email" placeholder="correo@ejemplo.com" required>
+      </div>
+
+      <div class="campo">
+        <label>🔒 Contraseña</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+
+      <div class="campo">
+        <label>🆔 Número de Documento (CI)</label>
+        <input type="text" id="numeroDocumento" placeholder="12345678" required>
+      </div>
+
+      <div class="campo">
+        <label>📞 Teléfono (opcional)</label>
+        <input type="text" id="telefono" placeholder="70123456">
+      </div>
+
+      <div class="campo">
+        <label>✍️ Nombres</label>
+        <input type="text" id="nombres" placeholder="Juan Carlos" required>
+      </div>
+
+      <div class="campo">
+        <label>👨 Apellido Paterno</label>
+        <input type="text" id="apellidoPaterno" placeholder="Pérez" required>
+      </div>
+
+      <div class="campo">
+        <label>👩 Apellido Materno (opcional)</label>
+        <input type="text" id="apellidoMaterno" placeholder="García">
+      </div>
+
+      <div class="campo">
+        <label>📅 Fecha de Nacimiento</label>
+        <input type="date" id="fechaNacimiento">
+      </div>
+
+      <button type="submit">Registrarme</button>
+    </form>
+  </div>
+
+  <script src="./js/registro-persona.js"></script>
+</body>
+
+</html>

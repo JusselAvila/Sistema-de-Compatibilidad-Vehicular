@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - Avila's Tyre</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <a class="header__volver" href="/">← Volver</a>
+    <h1>🚗 Avila's Tyre</h1>
+    <div class="header-actions"></div>
+  </header>
+
+  <div class="form-container">
+    <form id="loginForm" class="card">
+      <h2>Iniciar Sesión</h2>
+
+      <div class="campo">
+        <label for="email">📧 Correo electrónico</label>
+        <input type="email" id="email" required placeholder="correo@ejemplo.com">
+      </div>
+
+      <div class="campo">
+        <label for="password">🔒 Contraseña</label>
+        <input type="password" id="password" required placeholder="••••••••">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+
+      <p class="texto-centrado mt-10">¿No tienes cuenta?</p>
+
+      <a href="./registro.html" class="btn btn-secondary">Regístrate</a>
+    </form>
+  </div>
+
+  <script src="./js/login.js"></script>
+</body>
+
+</html>
